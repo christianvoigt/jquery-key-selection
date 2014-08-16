@@ -1,5 +1,5 @@
 /*
- *  jQuery Key Select - v0.1
+ *  jQuery Key Selection - v1.0
  *  Cycle throught arbitrary elements with your arrow keys and select them with enter or your mouse.
  *  
  *
