@@ -1,0 +1,27 @@
+{
+	"name": "keySelection",
+	"title": "jQuery Key Selection",
+	"description": "Cycle throught arbitrary elements with your arrow keys and select them with enter or your mouse.",
+	"keywords": [
+		"jquery",
+		"list",
+		"selectable",
+		"selection",
+		"plugins"
+	],
+	"version": "0.3",
+	"author": {
+		"name": "Christian Voigt",
+		"email": "1pxsolidblack@gmail.com",
+		"url": "https://github.com/1pxsolidblack"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://zenorocha.mit-license.org/"
+		}
+	],
+	"dependencies": {
+		"jquery": ">=1.7"
+	}
+}

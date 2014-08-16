@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery KeySelection</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../dist/jquery.key-selection.js"></script>
+<style>
+body{
+	font-family:sans-serif;
+	color:#666;
+}
+ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+li{
+	margin:0;
+}
+.selection-container{
+	margin-right:300px;
+	margin-left:4em;
+	margin-top:6em;
+}
+.selection-item{
+	border:2px solid #eee;	
+	padding:1em 0.5em;
+}
+li.selection-item{
+	border-top:none;
+}
+li.selection-item:first-of-type{
+	border-top:2px solid #eee;
+}
+.selection-item:hover{
+	background-color:#ddd;
+}
+.selection-item.key-hover, .selection-item.key-hover:hover{
+	background-color:lightyellow;
+}
+.selection-item.selected, .selection-item.selected:hover{
+	background-color:yellow;
+}
+
+</style>		
+	</head>
+	<body>
+	<div style="position:fixed; top:150px; right:20px; background-color:#ddd; width:200px; padding:1em; font-size:1em;">
+	<div style="margin-bottom:1em;"><strong>Use arrow keys to cycle through elements. Use enter key, space key or mouse to select one.</strong></div>
+	<div >Selected element: <span class="selected-element"></span>
+	</div>
+	<div>Key hover element: <span class="key-hover-element"></span>
+	</div>	
+		<div style="margin-top:1em;"><a href="#" class="button up">Up</a>
+		<a href="#" class="button down">Down</a>
+		<a href="#" class="button select">Select</a>
+		</div>
+		<div><a href="#" class="button stop">Stop</a>
+		<a href="#" class="button start">Start</a></div>
+	</div>
+<div class="selection-container">
+<h1>Jquery KeySelection Demo</h1>
+<p style="font-weight:bold; font-size:1.3em; margin-bottom:4em;">	Jquery KeySelection is a lightweight jQuery plugin (3kb) for cycling through arbitrary element collections with arrow keys. Collection members are selectable by keyboard or mouse.</p>
+
+	<ul class="selection-list">
+		<li class="selection-item">First item</li>
+		<li class="selection-item">Second item</li>
+		<li class="selection-item">Third item</li>
+		<li class="selection-item">Fourth item</li>
+		<li class="selection-item">Fifth item</li>
+	</ul>
+	<h3>A header</h3>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. </p>
+	<ol>
+		<li>Lorem ipsum dolor sit amet</li>
+		<li>Aenean commodo ligula eget dolor
+		<ol>
+			<li class="selection-item">Cum sociis natoque </li>
+			<li class="selection-item">Nullam dictum felis eu</li>
+			<li class="selection-item">Aenean leo ligula</li>
+		</ol>
+		</li>
+		<li>Nullam quis ante</li>
+	</ol>
+	<p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+	<p class="selection-item">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath</p>
+
+<p>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq.</p>
+	<p class="selection-item">
+ Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz. Brawny gods just
+	</p>
+</div>
+		<script>
+			$(function() {
+				$(".selection-container").keySelection();
+				$(".selection-container").on("keySelection.selection",function(e){
+					var $items = $(".selection-item");
+					var index = $items.index($(e.selectedElement));
+					$(".selected-element").empty().append(index+1);
+				});
+				$(".selection-container").on("keySelection.keyHover",function(e){
+					var $items = $(".selection-item");
+					var index = $items.index($(e.keyHoverElement));
+					$(".key-hover-element").empty().append(index+1);
+				});	
+				$(".button.up").on("click",function(){
+					$(".selection-container").keySelection("up");
+					return false;
+				});			
+				$(".button.down").on("click",function(){
+					$(".selection-container").keySelection("down");
+					return false;
+				});		
+				$(".button.stop").on("click",function(){
+					$(".selection-container").keySelection("stop");
+					return false;
+				});					
+				$(".button.start").on("click",function(){
+					$(".selection-container").keySelection("start");
+					return false;
+				});					
+				$(".button.select").on("click",function(){
+					$(".selection-container").keySelection("select");
+					return false;
+				});					
+			});
+		</script>
+	</body>
+</html>
