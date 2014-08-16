@@ -7,7 +7,9 @@
 				scrollContainer: "html,body",
 				scrollMargin: 10,
 				selectionItemSelector:".selection-item",
-				scrollAnimationDuration:150
+				scrollAnimationDuration:150,
+				enableSpaceSelection:false,
+				enableTabNavigation:true
 		};
 
 		// The actual plugin constructor
@@ -39,9 +41,21 @@
 								noPropagation = true;
 								break;
 							case that.keys.space:
+								if(that.options.enableSpaceSelection){
+									that.select();
+									noPropagation = true;
+								}
+								break;
 							case that.keys.enter:
 								that.select();
 								noPropagation = true;
+								break;
+							case that.keys.tab:
+								if(that.options.enableTabNavigation){
+									that.down();
+									noPropagation = true;
+								}
+								break;
 							}
 							if(noPropagation && that.options.exclusiveKeyListener){
 								return false;
@@ -126,6 +140,10 @@
 					$(document).off("keydown",this.keydownHandler);
 					$(this.element).off("click",this.options.selectionItemSelector,this.clickHandler);
 					this.stopped = true;
+				},
+				destroy : function(){
+					this.stop();
+					$.data(this, "plugin_" + pluginName, null);
 				}
 
 		};
@@ -136,7 +154,7 @@
 						if ( !$.data( this, "plugin_" + pluginName ) ) {
 								$.data( this, "plugin_" + pluginName, new Plugin( this, options ) );
 						}
-						if((typeof options === "string" || options instanceof String) && (/stop|up|down|select|stop|start/).test(options)){
+						if((typeof options === "string" || options instanceof String) && (/stop|up|down|select|stop|start|destroy/).test(options)){
 							var plugin =$.data( this, "plugin_" + pluginName);
 							plugin[options].call(plugin);
 						}

@@ -1,5 +1,5 @@
 /*
- *  jQuery Key Selection - v1.0
+ *  jQuery Key Selection - v1.0.1
  *  Cycle throught arbitrary elements with your arrow keys and select them with enter or your mouse.
  *  
  *
@@ -15,7 +15,9 @@
 				scrollContainer: "html,body",
 				scrollMargin: 10,
 				selectionItemSelector:".selection-item",
-				scrollAnimationDuration:150
+				scrollAnimationDuration:150,
+				enableSpaceSelection:false,
+				enableTabNavigation:true
 		};
 
 		// The actual plugin constructor
@@ -47,9 +49,21 @@
 								noPropagation = true;
 								break;
 							case that.keys.space:
+								if(that.options.enableSpaceSelection){
+									that.select();
+									noPropagation = true;
+								}
+								break;
 							case that.keys.enter:
 								that.select();
 								noPropagation = true;
+								break;
+							case that.keys.tab:
+								if(that.options.enableTabNavigation){
+									that.down();
+									noPropagation = true;
+								}
+								break;
 							}
 							if(noPropagation && that.options.exclusiveKeyListener){
 								return false;
@@ -135,13 +149,10 @@
 					$(this.element).off("click",this.options.selectionItemSelector,this.clickHandler);
 					this.stopped = true;
 				},
-				destroy: function() {
-				 
-				    this.stop();
-				 
-				    // Remove data
-				    $(this.element).removeData("plugin_" + pluginName);
-				}				
+				destroy : function(){
+					this.stop();
+					$.data(this, "plugin_" + pluginName, null);
+				}
 
 		};
 
