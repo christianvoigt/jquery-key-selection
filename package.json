@@ -1,10 +1,10 @@
 {
-	"name": "jquery-boilerplate",
-	"title": "jQuery Boilerplate",
-	"description": "A jump-start for jQuery plugins development.",
-	"author": "Zeno Rocha",
-	"homepage": "https://github.com/jquery-boilerplate/boilerplate/",
-	"version": "3.3.1",
+	"name": "jquery-key-selection",
+	"title": "jQuery Key Selection",
+	"description": "jQuery keySelection is a lightweight jQuery plugin (3kb) for cycling through arbitrary element collections with arrow keys. Collection members are selectable by keyboard or mouse.",
+	"author": "Christian Voigt",
+	"homepage": "https://github.com/christianvoigt/jquery-key-selection/",
+	"version": "1.0",
 	"devDependencies": {
 		"grunt": "~0.4.1",
 		"grunt-cli": "~0.1.7",

@@ -11,8 +11,8 @@ See [here]() for a demo.
 
 Download the [production version][min] (_minified_) or the [development version][max].
 
-[min]: https://raw.github.com/
-[max]: https://raw.github.com/1pxsolidblack/
+[min]: https://raw.githubusercontent.com/christianvoigt/jquery-key-selection/master/dist/jquery.key-selection.min.js
+[max]: https://raw.githubusercontent.com/christianvoigt/jquery-key-selection/master/dist/jquery.key-selection.js
 
 ##basic usage:
 
