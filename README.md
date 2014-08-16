@@ -7,7 +7,7 @@ keySelection will always reflect the current dom state, so you can dynamically a
 
 ##demo & download
 
-See [here]() for a demo.
+See [here](http://christianvoigt.github.io/jquery-key-selection/demo/) for a demo.
 
 Download the [production version][min] (_minified_) or the [development version][max].
 
