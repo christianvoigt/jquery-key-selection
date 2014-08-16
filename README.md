@@ -58,6 +58,7 @@ keySelection triggers events if an element is selected or keyHovered:
     $(".container").keySelection("up"); //set previous element to .key-hover
     $(".container").keySelection("down"); //set next element to .key-hover
     $(".container").keySelection("select"); //select .key-hover element
+    $(".container").keySelection("destroy"); //destroy keySelection for this element
 ```
 
 ##motivation & alternatives

@@ -134,7 +134,14 @@
 					$(document).off("keydown",this.keydownHandler);
 					$(this.element).off("click",this.options.selectionItemSelector,this.clickHandler);
 					this.stopped = true;
-				}
+				},
+				destroy: function() {
+				 
+				    this.stop();
+				 
+				    // Remove data
+				    $(this.element).removeData("plugin_" + pluginName);
+				}				
 
 		};
 
@@ -144,7 +151,7 @@
 						if ( !$.data( this, "plugin_" + pluginName ) ) {
 								$.data( this, "plugin_" + pluginName, new Plugin( this, options ) );
 						}
-						if((typeof options === "string" || options instanceof String) && (/stop|up|down|select|stop|start/).test(options)){
+						if((typeof options === "string" || options instanceof String) && (/stop|up|down|select|stop|start|destroy/).test(options)){
 							var plugin =$.data( this, "plugin_" + pluginName);
 							plugin[options].call(plugin);
 						}
