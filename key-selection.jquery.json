@@ -1,5 +1,5 @@
 {
-	"name": "keySelection",
+	"name": "key-selection",
 	"title": "jQuery Key Selection",
 	"description": "Cycle throught arbitrary elements with your arrow keys and select them with enter or your mouse.",
 	"keywords": [
