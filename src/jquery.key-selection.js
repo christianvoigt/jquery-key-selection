@@ -143,7 +143,7 @@
 				},
 				destroy : function(){
 					this.stop();
-					$.data(this, "plugin_" + pluginName, null);
+					$.data(this.element, "plugin_" + pluginName, null);
 				}
 
 		};
