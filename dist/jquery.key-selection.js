@@ -16,8 +16,15 @@
 				scrollMargin: 10,
 				selectionItemSelector:".selection-item",
 				scrollAnimationDuration:150,
-				enableSpaceSelection:false,
-				enableTabNavigation:true
+				keyActions:[ //use any and as many keys you want. available actions: select, up, down
+					{keyCode:13, action:"select"}, //enter
+					{keyCode:38, action:"up"}, //up
+					{keyCode:40, action:"down"}, //down
+					{keyCode:37, action:"up"}, //left
+					{keyCode:39, action:"down"}, //right
+					{keyCode:9, action:"down"}, //tab
+					{keyCode:32, action:"select"} //space
+				]
 		};
 
 		// The actual plugin constructor
@@ -37,37 +44,29 @@
 					var that = this;
 					this.keydownHandler = function(e){
 						var noPropagation = false;
-						switch(e.which){
-							case that.keys.left:
-							case that.keys.up:
-								that.up();
-								noPropagation = true;
-								break;
-							case that.keys.right:
-							case that.keys.down:
-								that.down();
-								noPropagation = true;
-								break;
-							case that.keys.space:
-								if(that.options.enableSpaceSelection){
-									that.select();
-									noPropagation = true;
+						$.each(that.options.keyActions,function(i, keyAction){
+							if(keyAction.keyCode === e.which){
+								switch(keyAction.action){
+									case "up":
+										that.up();
+										noPropagation = true;
+										break;
+									case "down":
+										that.down();
+										noPropagation = true;
+										break;
+									case "select":
+										that.select();
+										noPropagation = true;
+										break;
 								}
-								break;
-							case that.keys.enter:
-								that.select();
-								noPropagation = true;
-								break;
-							case that.keys.tab:
-								if(that.options.enableTabNavigation){
-									that.down();
-									noPropagation = true;
-								}
-								break;
+								return false; //break out of each
 							}
-							if(noPropagation && that.options.exclusiveKeyListener){
-								return false;
-							}
+						});
+
+						if(noPropagation && that.options.exclusiveKeyListener){
+							return false;
+						}
 					};
 					$(document).on("keydown",this.keydownHandler);
 					this.clickHandler = function(){
@@ -151,7 +150,7 @@
 				},
 				destroy : function(){
 					this.stop();
-					$.data(this, "plugin_" + pluginName, null);
+					$.data(this.element, "plugin_" + pluginName, null);
 				}
 
 		};

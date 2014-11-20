@@ -39,7 +39,16 @@ $(".container").keySelection();
 	    scrollContainer: "html,body",
 	    scrollMargin: 10, //space above item, after scrolling
 	    scrollAnimationDuration:150,	
-	    selectionItemSelector:".selection-item"
+	    selectionItemSelector:".selection-item",
+        keyActions:[ //use any and as many keys you want. available actions: "select", "up", "down"
+            {keyCode:13, action:"select"}, //enter
+            {keyCode:38, action:"up"}, //up
+            {keyCode:40, action:"down"}, //down
+            {keyCode:37, action:"up"}, //left
+            {keyCode:39, action:"down"}, //right
+            {keyCode:9, action:"down"}, //tab
+            {keyCode:32, action:"select"} //space
+        ]        
     });
 ```
 ##events
